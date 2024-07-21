@@ -54,7 +54,7 @@ The **Dynamic Programming Language Learning Platform** is a web application desi
 
 6. **Run the Backend Server**:
    ```sh
-   python app.py
+   python main.py
    ```
 
 7. **Run the Frontend Application**:
