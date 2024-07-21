@@ -50,18 +50,20 @@ The **Dynamic Programming Language Learning Platform** is a web application desi
    pip install -r requirements.txt
    ```
 
-5. **Run the Backend Server**:
+5. **Add the Needed APIs**
+
+6. **Run the Backend Server**:
    ```sh
    python app.py
    ```
 
-6. **Run the Frontend Application**:
+7. **Run the Frontend Application**:
    ```sh
    cd ../frontend
    ng serve
    ```
 
-7. **Access the Application**:
+8. **Access the Application**:
    Open your browser and navigate to `http://localhost:4200`.
 
 ### Contributions
