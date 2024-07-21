@@ -1,0 +1,32 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .toggle-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 100%;
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+  }
+  

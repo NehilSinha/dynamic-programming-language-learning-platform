@@ -1,0 +1,35 @@
+<header class="bg-gray-800 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-6">
+      <div class="flex items-center">
+        <a href="/" class="text-3xl font-bold">Codez</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class="text-base font-medium nav-item">Home</a>
+        <a href="/learn" class="text-base font-medium nav-item">Learning Module</a>
+        <ng-container *ngIf="!authService.isLoggedIn(); else loggedIn">
+          <a href="/login" class="text-base font-medium nav-item">Login</a>
+        </ng-container>
+        <ng-template #loggedIn>
+          <div class="flex items-center space-x-2">
+            <ng-container *ngIf="authService.getCurrentUser()?.avatar">
+              <img [src]="avatarUrl()" alt="Avatar" class="h-8 w-8 rounded-full">
+            </ng-container>
+            <a href="/profile" class="text-base font-medium nav-item">Profile</a>
+            <a href="javascript:void(0);" (click)="logout()" class="text-base font-medium nav-item">Logout</a>
+          </div>
+        </ng-template>
+      </nav>
+      <div class="md:hidden">
+        <button class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p class="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+    Never gonna give up!!!
+  </p>
+</header>

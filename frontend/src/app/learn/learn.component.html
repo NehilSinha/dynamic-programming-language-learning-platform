@@ -1,0 +1,47 @@
+<div class="bg-white py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative">
+      <div class="flex justify-center mb-8">
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search languages..."
+          class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-transform duration-300 ease-in-out transform hover:scale-105" />
+      </div>
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <ng-container *ngFor="let language of languages | filter:searchQuery">
+          <a (click)="onLanguageClick(language)" class="group flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 cursor-pointer" [class.opacity-50]="language.comingSoon">
+            <div class="aspect-w-1 aspect-h-1 w-32 h-32 overflow-hidden rounded-full bg-gray-200">
+              <img [src]="language.imgSrc" [alt]="language.alt" class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300">
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900">{{ language.title }}</h3>
+            <p class="mt-2 text-sm text-gray-600">{{ language.description }}</p>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="showModal" class="fixed inset-0 z-50 overflow-auto bg-smoke-light flex">
+    <div class="relative p-8 bg-white w-full max-w-md m-auto flex-col flex rounded-lg shadow-lg">
+      <div class="flex items-center justify-center mb-4">
+        <svg class="w-16 h-16 text-blue-700 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9 9-4.03 9-9z"></path>
+        </svg>
+      </div>
+      <div class="text-2xl text-center font-bold text-blue-900 mb-4">You must be logged in to access these courses.</div>
+      <a href="/login"
+        class="inline-flex items-center justify-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-full shadow-md hover:bg-blue-800 transition-transform transform hover:scale-105 duration-300">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+        Login
+      </a>
+      <button (click)="showModal = false"
+        class="mt-4 inline-flex items-center justify-center px-4 py-2 bg-gray-300 text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-transform transform hover:scale-105 duration-300">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

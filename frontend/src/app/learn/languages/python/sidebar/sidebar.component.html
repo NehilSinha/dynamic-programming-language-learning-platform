@@ -1,0 +1,53 @@
+<div [class.translate-x-0]="isOpen" [class.-translate-x-full]="!isOpen" class="fixed top-0 left-0 w-64 h-full bg-gray-800 text-white transform transition-transform duration-300 ease-in-out z-50 shadow-lg">
+  <button (click)="toggleSidebar()" class="absolute top-4 right-4 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400">
+    <i class="fas fa-times text-lg"></i>
+  </button>
+  <div class="p-6 space-y-6">
+    <h2 class="text-2xl font-semibold mb-6">Sidebar</h2>
+    <div class="space-y-4">
+      <a href="learn/python" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-home text-xl"></i>
+        <div>
+          <span>Home</span>
+          <p class="text-sm text-gray-400">Home Page</p>
+        </div>
+      </a>
+      <a href="learn/python/installation" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-cogs text-xl"></i>
+        <div>
+          <span>Installation</span>
+          <p class="text-sm text-gray-400">Setup instructions</p>
+        </div>
+      </a>
+      <a href="learn/python/documentation" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-book text-xl"></i>
+        <div>
+          <span>Language Reference</span>
+          <p class="text-sm text-gray-400">Documentation</p>
+        </div>
+      </a>
+      <a href="learn/python/library" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-box text-xl"></i>
+        <div>
+          <span>Standard Library</span>
+          <p class="text-sm text-gray-400">Built-in modules</p>
+        </div>
+      </a>
+      <a href="learn/python/modules" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-plus-circle text-xl"></i>
+        <div>
+          <span>Installing Modules</span>
+          <p class="text-sm text-gray-400">Add-ons</p>
+        </div>
+      </a>
+      <a href="learn/python/distribution" class="flex items-center space-x-4 text-base font-medium text-gray-300 hover:text-gray-100 transition-colors duration-200 ease-in-out">
+        <i class="fas fa-share-alt text-xl"></i>
+        <div>
+          <span>Distributing Modules</span>
+          <p class="text-sm text-gray-400">Share your work</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div *ngIf="isOpen" (click)="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm transition-opacity duration-300 ease-in-out z-40"></div>

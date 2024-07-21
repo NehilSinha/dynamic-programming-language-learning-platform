@@ -1,0 +1,19 @@
+<div *ngIf="angularInfo" class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-4">{{ angularInfo.title }}</h1>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="description">
+      <h2 class="text-2xl font-semibold mb-2">Description</h2>
+      <div *ngFor="let paragraph of angularInfo.description.split('\n\n'); let i = index" class="mb-4">
+        <p class="leading-relaxed">{{ paragraph }}</p>
+      </div>
+    </div>
+    <div class="code-examples">
+      <h2 class="text-2xl font-semibold mb-2">Code Examples</h2>
+      <pre class="bg-gray-100 p-4 rounded overflow-x-auto whitespace-pre-wrap">{{ angularInfo.code_examples }}</pre>
+    </div>
+  </div>
+
+<div *ngIf="errorMessage" class="container mx-auto px-4 py-8 text-center">
+  <p class="text-red-500">{{ errorMessage }}</p>
+</div>

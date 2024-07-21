@@ -1,0 +1,26 @@
+.nav-item {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #9ca3af; /* Tailwind gray-400 */
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slide-down {
+    animation: slideDown 0.5s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
