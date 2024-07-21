@@ -1,0 +1,7 @@
+Flask==2.0.3
+requests==2.26.0
+Flask-Cors==3.0.10
+gunicorn==20.1.0
+python-dotenv==0.19.2
+google-generative-ai==0.1.0  # Replace with the actual package name and version for Google Generative AI
+concurrent-futures==3.0.5
